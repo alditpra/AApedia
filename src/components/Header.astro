@@ -37,6 +37,7 @@ const currentPath = Astro.url.pathname;
           link.children ? (
             <div class="relative group">
               <button 
+                aria-label="Toggle Dropdown"
                 class={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary-600 ${
                   currentPath.startsWith(link.href) ? 'text-primary-600' : 'text-slate-600'
                 }`}
@@ -81,7 +82,7 @@ const currentPath = Astro.url.pathname;
       </a>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-primary-600">
+      <button id="mobile-menu-btn" aria-label="Open Menu" class="md:hidden p-2 text-slate-600 hover:text-primary-600">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
@@ -94,7 +95,7 @@ const currentPath = Astro.url.pathname;
         {navLinks.map((link) => (
           link.children ? (
              <div class="space-y-2">
-                <p class="text-sm font-semibold text-slate-400 px-2 uppercase text-xs tracking-wider">{link.label}</p>
+                <p class="text-sm font-semibold text-slate-500 px-2 uppercase text-xs tracking-wider">{link.label}</p>
                 {link.children.map(child => (
                     <a 
                     href={child.href} 
@@ -102,7 +103,7 @@ const currentPath = Astro.url.pathname;
                       currentPath === child.href ? 'text-primary-600' : 'text-slate-600'
                     }`}
                   >
-                    {child.label} <span class="text-slate-400 font-normal">- {child.desc}</span>
+                    {child.label} <span class="text-slate-500 font-normal">- {child.desc}</span>
                   </a>
                 ))}
              </div>
