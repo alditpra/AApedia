@@ -1,10 +1,11 @@
 ---
-import ServiceCard from './ServiceCard.astro';
+import ServiceCard from "./ServiceCard.astro";
 
 const services = [
   {
     title: "AAPEDIA PUBLISH",
-    description: "Hosting stabil untuk Web Akademik, OJS, dan Jurnal Ilmiah. Cepat, aman, terima beres.",
+    description:
+      "Hosting stabil untuk Web Akademik, OJS, dan Jurnal Ilmiah. Cepat, aman, terima beres.",
     icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>`,
     badge: "Best Seller",
     badgeColor: "orange",
@@ -13,14 +14,16 @@ const services = [
   },
   {
     title: "AAPEDIA COMPUTE",
-    description: "Komputasi awan untuk pengolahan data statistik, scraping, dan big data analysis.",
+    description:
+      "Komputasi awan untuk pengolahan data statistik, scraping, dan big data analysis.",
     icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg>`,
     price: "Rp 850rb/bln",
     href: "/layanan/compute",
   },
   {
     title: "AAPEDIA INTELLIGENCE",
-    description: "Infrastruktur GPU premium untuk Deep Learning, AI Training, dan NLP Research.",
+    description:
+      "Infrastruktur GPU premium untuk Deep Learning, AI Training, dan NLP Research.",
     icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>`,
     badge: "GPU Ready",
     badgeColor: "purple",
@@ -29,7 +32,8 @@ const services = [
   },
   {
     title: "AAPEDIA FLEXBILL",
-    description: "Jasa talangan pembayaran cloud untuk dosen yang ingin kontrol penuh atas console AWS/GCP.",
+    description:
+      "Jasa talangan pembayaran cloud untuk dosen yang ingin kontrol penuh atas console AWS/GCP.",
     icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>`,
     price: "Fee 15-20%",
     href: "/layanan/flexbill",
@@ -41,37 +45,59 @@ const services = [
   <div class="max-w-7xl mx-auto px-6">
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <p class="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-3">
+      <p
+        class="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-3"
+      >
         Katalog Layanan
       </p>
       <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
         Your Gateway to <span class="text-gradient">World-Class</span> Cloud
       </h2>
       <p class="text-lg text-slate-500 max-w-2xl mx-auto">
-        Pilih paket yang sesuai dengan kebutuhan Anda. Semua termasuk layanan managed dan support Indonesia.
+        Pilih paket yang sesuai dengan kebutuhan Anda. Semua termasuk layanan
+        managed dan dukungan teknis lokal.
       </p>
     </div>
 
     <!-- Service Cards Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {services.map((service) => (
-        <ServiceCard {...service} />
-      ))}
+      {services.map((service) => <ServiceCard {...service} />)}
     </div>
 
     <!-- One-Time Services Note -->
     <div class="mt-12 text-center">
-      <div class="inline-flex items-center gap-4 px-6 py-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-        <div class="w-10 h-10 rounded-xl bg-accent-100 flex items-center justify-center">
-          <svg class="w-5 h-5 text-accent-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+      <div
+        class="inline-flex items-center gap-4 px-6 py-4 rounded-2xl bg-white border border-slate-200 shadow-sm"
+      >
+        <div
+          class="w-10 h-10 rounded-xl bg-accent-100 flex items-center justify-center"
+        >
+          <svg
+            class="w-5 h-5 text-accent-600"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"
+            ></path>
           </svg>
         </div>
         <div class="text-left">
-          <p class="font-semibold text-slate-800">Butuh layanan sekali jalan?</p>
-          <p class="text-sm text-slate-500">Migration, Consulting, Security Audit — mulai Rp 1jt</p>
+          <p class="font-semibold text-slate-800">
+            Butuh layanan sekali jalan?
+          </p>
+          <p class="text-sm text-slate-500">
+            Migration, Consulting, Security Audit — mulai Rp 1jt
+          </p>
         </div>
-        <a href="/layanan" class="text-primary-600 font-medium text-sm hover:text-primary-700">
+        <a
+          href="/layanan"
+          class="text-primary-600 font-medium text-sm hover:text-primary-700"
+        >
           Lihat Semua →
         </a>
       </div>
