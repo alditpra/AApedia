@@ -1,0 +1,163 @@
+---
+// Value Proposition Section - Before-After Comparison Layout
+const diyProblems = [
+  "Perlu kartu kredit USD & kena kurs",
+  "Setup server & konfigurasi sendiri",
+  "Install software & library manual",
+  "Setting backup & monitoring sendiri",
+  "Kalau down, troubleshoot sendiri",
+  "Invoice asing, tidak bisa untuk SPJ",
+  "Support ticket 3+ hari, bahasa Inggris",
+];
+
+const aapediaBenefits = [
+  "Transfer bank biasa, harga Rupiah fix",
+  "Server langsung siap pakai",
+  "Software & environment sudah terinstall",
+  "Backup harian & monitoring 24/7",
+  "Kalau ada masalah, tim kami yang urus",
+  "Invoice & kuitansi lengkap untuk SPJ",
+  "Support WhatsApp, respon cepat garcep!",
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <p
+        class="text-sm font-semibold text-accent-600 uppercase tracking-wider mb-3"
+      >
+        Kenapa Lewat AApedia?
+      </p>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+        Bisa Beli Langsung? <span class="text-gradient">Bisa.</span>
+      </h2>
+      <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+        Tapi kalau lewat kami, semuanya jadi lebih mudah:
+      </p>
+    </div>
+
+    <!-- Before-After Comparison -->
+    <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+      <!-- DIY / Kalau Sendiri -->
+      <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+        <div class="text-center mb-6">
+          <div
+            class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-slate-200 text-slate-500 mb-3"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-700">Kalau Beli Sendiri</h3>
+          <p class="text-sm text-slate-400">
+            di AWS / Google Cloud / DigitalOcean
+          </p>
+        </div>
+        <ul class="space-y-4">
+          {
+            diyProblems.map((problem) => (
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+                <span class="text-slate-600">{problem}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- AApedia / Lewat Kami -->
+      <div
+        class="bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl p-8 text-white ring-4 ring-primary-200"
+      >
+        <div class="text-center mb-6">
+          <div
+            class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white mb-3"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold">Kalau Lewat AApedia</h3>
+          <p class="text-sm text-primary-200">Managed Cloud Service</p>
+        </div>
+        <ul class="space-y-4">
+          {
+            aapediaBenefits.map((benefit) => (
+              <li class="flex items-start gap-3">
+                <svg
+                  class="w-5 h-5 text-accent-300 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-primary-50">{benefit}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-10">
+      <p class="text-slate-500 mb-4">
+        Bayar sedikit lebih, tapi urusan jadi jauh lebih mudah.
+      </p>
+      <a
+        href="/layanan"
+        class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors"
+      >
+        Lihat Paket Layanan
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

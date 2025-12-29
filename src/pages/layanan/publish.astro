@@ -1,0 +1,755 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const packages = [
+  {
+    name: "Basic Profile",
+    target: "Blog Dosen, Web Lab, Landing Page, Portfolio Riset",
+    specs: "1 vCPU, 1 GB RAM, 25 GB SSD",
+    features: [
+      "Install PHP/Node.js",
+      "Free SSL",
+      "Backup Mingguan",
+      "Support Email",
+    ],
+    price: "Rp 250.000",
+    period: "/bulan",
+    popular: false,
+  },
+  {
+    name: "Education Pro",
+    target: "Jurnal Ilmiah (OJS 3), Web Kampus, E-Learning",
+    specs: "2 vCPU, 4 GB RAM, 80 GB SSD",
+    features: [
+      "Install & Tuning",
+      "Security Hardening + SSL",
+      "Backup Harian",
+      "Support WhatsApp",
+    ],
+    price: "Rp 750.000",
+    period: "/bulan",
+    popular: true,
+  },
+  {
+    name: "Pro Max",
+    target: "Web Seminar/Konferensi (Web Trafik Tinggi)",
+    specs: "4 vCPU, 8 GB RAM, 160 GB SSD",
+    features: [
+      "Semua Paket Pro",
+      "Anti Down hari H",
+      "Setup Subdomain",
+      "Priority Support",
+    ],
+    price: "Rp 1.500.000",
+    period: "/bulan",
+    popular: false,
+  },
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Konsultasi",
+    description: "Ceritakan kebutuhan Anda. Kami bantu pilih paket yang tepat.",
+  },
+  {
+    number: "02",
+    title: "Setup Server",
+    description:
+      "Tim kami setup server, install aplikasi, dan konfigurasi keamanan.",
+  },
+  {
+    number: "03",
+    title: "Go Live!",
+    description: "Website Anda online. Kami terus monitoring dan backup.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Berapa lama proses setup?",
+    a: "Untuk Basic Profile 1-2 hari kerja. OJS Pro membutuhkan 2-3 hari termasuk tuning dan migrasi data.",
+  },
+  {
+    q: "Apakah bisa migrasi dari hosting lama?",
+    a: "Bisa! Kami bantu migrasi penuh termasuk database, file, dan konfigurasi. Gratis untuk paket OJS Pro ke atas.",
+  },
+  {
+    q: "Bagaimana sistem pembayarannya?",
+    a: "Pembayaran bulanan via transfer bank. Invoice dan kuitansi lengkap untuk keperluan SPJ.",
+  },
+];
+
+const useCases = [
+  {
+    title: "Jurnal OJS 3",
+    description: "Hosting jurnal ilmiah dengan Open Journal Systems",
+    techDetails: [
+      "OJS 3.x install & config",
+      "Plugin DOI/Crossref",
+      "SMTP email setup",
+      "PDF viewer optimized",
+    ],
+  },
+  {
+    title: "Website Prodi/Fakultas",
+    description: "Portal informasi program studi atau fakultas",
+    techDetails: [
+      "WordPress + theme custom",
+      "Form pendaftaran",
+      "Gallery & news section",
+      "Mobile responsive",
+    ],
+  },
+  {
+    title: "Portfolio Dosen",
+    description: "Website personal untuk showcase riset & publikasi",
+    techDetails: [
+      "Static site (Hugo/Jekyll)",
+      "Google Scholar integration",
+      "CV downloadable",
+      "Fast loading",
+    ],
+  },
+  {
+    title: "Landing Konferensi",
+    description: "Website seminar/conference dengan registration",
+    techDetails: [
+      "Form submission system",
+      "Payment integration ready",
+      "Countdown timer",
+      "Speaker profiles",
+    ],
+  },
+];
+---
+
+<BaseLayout title="AAPEDIA PUBLISH - Web & Jurnal Hosting">
+  <Header />
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="py-16 bg-gradient-to-b from-orange-50 to-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center gap-2 mb-4">
+          <span
+            class="px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700"
+            >Best Seller</span
+          >
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          AAPEDIA <span class="text-gradient">PUBLISH</span>
+        </h1>
+        <p class="text-xl text-slate-600 mb-2">
+          Solusi Hosting Stabil untuk Website Akademik & OJS
+        </p>
+        <p class="text-slate-500 max-w-2xl">
+          Infrastruktur: Powered by <strong>DigitalOcean / Vultr</strong> — dipilih
+          karena harga flat & bandwidth murah.
+        </p>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-12"
+        >
+          Cara Kerja
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {
+            steps.map((step, index) => (
+              <div class="relative text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl">
+                  {step.number}
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">
+                  {step.title}
+                </h3>
+                <p class="text-slate-500 text-sm">{step.description}</p>
+                {index < steps.length - 1 && (
+                  <div class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-slate-200" />
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-4"
+        >
+          Pilih Paket Anda
+        </h2>
+        <p class="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+          Semua paket sudah termasuk setup, SSL, backup, dan monitoring.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          {
+            packages.map((pkg) => (
+              <div
+                class={`relative rounded-2xl p-8 ${pkg.popular ? "bg-primary-600 text-white ring-4 ring-primary-200" : "bg-white border border-slate-200"} hover-lift`}
+              >
+                {pkg.popular && (
+                  <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-accent-500 text-white text-sm font-semibold rounded-full">
+                    Best Seller
+                  </div>
+                )}
+
+                <h3
+                  class={`text-xl font-bold mb-2 ${pkg.popular ? "text-white" : "text-slate-800"}`}
+                >
+                  {pkg.name}
+                </h3>
+                <p
+                  class={`text-sm mb-4 ${pkg.popular ? "text-primary-100" : "text-slate-500"}`}
+                >
+                  {pkg.target}
+                </p>
+
+                <div
+                  class={`text-sm mb-4 px-3 py-2 rounded-lg ${pkg.popular ? "bg-white/10" : "bg-slate-50"}`}
+                >
+                  <span
+                    class={pkg.popular ? "text-primary-100" : "text-slate-600"}
+                  >
+                    {pkg.specs}
+                  </span>
+                </div>
+
+                <div class="mb-6">
+                  <span
+                    class={`text-3xl font-bold ${pkg.popular ? "text-white" : "text-slate-800"}`}
+                  >
+                    {pkg.price}
+                  </span>
+                  <span
+                    class={`text-sm ${pkg.popular ? "text-primary-200" : "text-slate-500"}`}
+                  >
+                    {pkg.period}
+                  </span>
+                </div>
+
+                <ul class="space-y-3 mb-8">
+                  {pkg.features.map((feature) => (
+                    <li
+                      class={`flex items-center gap-2 text-sm ${pkg.popular ? "text-primary-100" : "text-slate-600"}`}
+                    >
+                      <svg
+                        class={`w-5 h-5 flex-shrink-0 ${pkg.popular ? "text-accent-300" : "text-accent-500"}`}
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="/kontak"
+                  class={`block text-center py-3 rounded-full font-semibold transition-all ${pkg.popular ? "bg-white text-primary-700 hover:bg-primary-50" : "bg-primary-600 text-white hover:bg-primary-700"}`}
+                >
+                  Pilih Paket
+                </a>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Pricing Note -->
+        <p class="text-center text-sm text-slate-500 mt-8">
+          Minimal langganan 1 bulan.
+        </p>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-12"
+        >
+          Perbandingan Fitur
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full bg-white rounded-2xl overflow-hidden shadow-sm">
+            <thead>
+              <tr class="bg-slate-100">
+                <th class="text-left p-4 font-semibold text-slate-700">Fitur</th
+                >
+                <th class="text-center p-4 font-semibold text-slate-700"
+                  >Basic Profile</th
+                >
+                <th
+                  class="text-center p-4 font-semibold text-primary-600 bg-primary-50"
+                  >OJS Pro</th
+                >
+                <th class="text-center p-4 font-semibold text-slate-700"
+                  >Conference Max</th
+                >
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="p-4 text-slate-600">vCPU</td>
+                <td class="p-4 text-center text-slate-800">1</td>
+                <td
+                  class="p-4 text-center text-primary-600 bg-primary-50/50 font-semibold"
+                  >2</td
+                >
+                <td class="p-4 text-center text-slate-800">4</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-slate-600">RAM</td>
+                <td class="p-4 text-center text-slate-800">1 GB</td>
+                <td
+                  class="p-4 text-center text-primary-600 bg-primary-50/50 font-semibold"
+                  >4 GB</td
+                >
+                <td class="p-4 text-center text-slate-800">8 GB</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-slate-600">Storage SSD</td>
+                <td class="p-4 text-center text-slate-800">25 GB</td>
+                <td
+                  class="p-4 text-center text-primary-600 bg-primary-50/50 font-semibold"
+                  >80 GB</td
+                >
+                <td class="p-4 text-center text-slate-800">160 GB</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-slate-600">Backup</td>
+                <td class="p-4 text-center text-slate-800">Mingguan</td>
+                <td
+                  class="p-4 text-center text-primary-600 bg-primary-50/50 font-semibold"
+                  >Harian</td
+                >
+                <td class="p-4 text-center text-slate-800">Harian</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-slate-600">SSL Gratis</td>
+                <td class="p-4 text-center text-accent-500">✓</td>
+                <td class="p-4 text-center text-accent-500 bg-primary-50/50"
+                  >✓</td
+                >
+                <td class="p-4 text-center text-accent-500">✓</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-slate-600">Migrasi Gratis</td>
+                <td class="p-4 text-center text-slate-400">—</td>
+                <td class="p-4 text-center text-accent-500 bg-primary-50/50"
+                  >✓</td
+                >
+                <td class="p-4 text-center text-accent-500">✓</td>
+              </tr>
+              <tr>
+                <td class="p-4 text-slate-600">Support</td>
+                <td class="p-4 text-center text-slate-800">Email</td>
+                <td
+                  class="p-4 text-center text-primary-600 bg-primary-50/50 font-semibold"
+                  >WhatsApp</td
+                >
+                <td class="p-4 text-center text-slate-800">Priority</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-4"
+        >
+          Cocok Untuk
+        </h2>
+        <p class="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+          Contoh implementasi yang sudah kami tangani (technical details kami
+          yang manage).
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {
+            useCases.map((useCase) => (
+              <div class="bg-white rounded-2xl p-6 border border-slate-100 hover-lift">
+                <h3 class="font-bold text-slate-800 mb-2">{useCase.title}</h3>
+                <p class="text-sm text-slate-500 mb-4">{useCase.description}</p>
+                <div class="space-y-2">
+                  {useCase.techDetails.map((detail) => (
+                    <div class="flex items-center gap-2 text-xs text-slate-400">
+                      <svg
+                        class="w-3 h-3 text-accent-500 flex-shrink-0"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                      <span class="font-mono">{detail}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Scope of Service -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-5xl mx-auto px-6">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-4"
+        >
+          Apa yang Kami Kerjakan?
+        </h2>
+        <p class="text-slate-500 text-center mb-12 max-w-xl mx-auto">
+          Kami fokus pada infrastruktur server, bukan konten website.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Termasuk -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-accent-100 flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-accent-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-slate-800">Yang Termasuk</h3>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path></svg
+                >
+                Setup & konfigurasi server
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path></svg
+                >
+                Install CMS/aplikasi (WordPress, OJS, dll)
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path></svg
+                >
+                Backup otomatis harian/mingguan
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path></svg
+                >
+                Security hardening & SSL
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path></svg
+                >
+                Monitoring uptime 24/7
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-accent-500 flex-shrink-0 mt-0.5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  ><path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"></path></svg
+                >
+                Troubleshooting masalah server
+              </li>
+            </ul>
+          </div>
+          <!-- Tidak Termasuk -->
+          <div class="bg-white rounded-2xl p-6 border border-slate-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-slate-500"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </div>
+              <h3 class="font-bold text-slate-800">Tidak Termasuk</h3>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-500">
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path></svg
+                >
+                Desain/pembuatan website
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path></svg
+                >
+                Upload/edit konten artikel
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path></svg
+                >
+                Admin jurnal (OJS editor workflow)
+              </li>
+              <li class="flex items-start gap-2">
+                <svg
+                  class="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  ><path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path></svg
+                >
+                Update konten/berita berkala
+              </li>
+            </ul>
+            <p class="text-xs text-slate-400 mt-4 italic">
+              * Butuh layanan ini? Lihat Layanan Tambahan di bawah.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-4"
+        >
+          Layanan Tambahan
+        </h2>
+        <p class="text-slate-500 text-center mb-8">
+          Butuh lebih dari sekedar hosting?
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div
+            class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 border border-primary-100"
+          >
+            <h3 class="font-bold text-slate-800 mb-2">
+              📐 Desain & Pembuatan Website
+            </h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Kami buatkan website dari nol, tinggal pakai. Sudah termasuk
+              hosting.
+            </p>
+            <p class="text-xs text-primary-600 font-medium">
+              * Minimal langganan cloud 1 tahun untuk paket bundling.
+            </p>
+          </div>
+          <div
+            class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 border border-primary-100"
+          >
+            <h3 class="font-bold text-slate-800 mb-2">
+              👤 Outsource Admin Website
+            </h3>
+            <p class="text-sm text-slate-600 mb-4">
+              Butuh orang untuk kelola konten website? Kami bisa carikan.
+            </p>
+            <p class="text-xs text-primary-600 font-medium">
+              * Hubungi kami untuk penawaran custom.
+            </p>
+          </div>
+        </div>
+        <p class="text-center mt-8">
+          <a
+            href="/kontak"
+            class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors"
+          >
+            Konsultasi Layanan Tambahan
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2
+          class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-12"
+        >
+          Pertanyaan Umum
+        </h2>
+        <div class="space-y-4">
+          {
+            faqs.map((faq) => (
+              <details class="group bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-slate-50">
+                  <span class="font-semibold text-slate-800">{faq.q}</span>
+                  <svg
+                    class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-500">{faq.a}</div>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-br from-primary-600 to-primary-800">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          Masih Bingung Pilih Paket?
+        </h2>
+        <p class="text-primary-100 mb-8">
+          Konsultasi gratis dengan tim kami. Kami bantu carikan solusi terbaik.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/kontak"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 rounded-full font-semibold hover:bg-primary-50 transition-all"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+              ></path>
+            </svg>
+            Konsultasi Gratis
+          </a>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white border-2 border-white/30 rounded-full font-semibold hover:bg-white/10 transition-all"
+          >
+            WhatsApp Langsung
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  badge?: string;
+  badgeColor?: string;
+  price?: string;
+  href: string;
+}
+
+const { title, description, icon, badge, badgeColor = "primary", price, href } = Astro.props;
+
+const badgeColorClasses = {
+  primary: "bg-primary-100 text-primary-700",
+  accent: "bg-accent-100 text-accent-700",
+  orange: "bg-orange-100 text-orange-700",
+  purple: "bg-purple-100 text-purple-700",
+};
+---
+
+<a href={href} class="group block">
+  <div class="relative glass rounded-2xl p-6 border border-slate-100 hover-lift h-full">
+    <!-- Badge -->
+    {badge && (
+      <div class={`absolute -top-3 right-4 px-3 py-1 text-xs font-semibold rounded-full ${badgeColorClasses[badgeColor as keyof typeof badgeColorClasses] || badgeColorClasses.primary}`}>
+        {badge}
+      </div>
+    )}
+
+    <!-- Icon -->
+    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform">
+      <Fragment set:html={icon} />
+    </div>
+
+    <!-- Content -->
+    <h3 class="text-lg font-bold text-slate-800 mb-2 group-hover:text-primary-600 transition-colors">
+      {title}
+    </h3>
+    <p class="text-sm text-slate-500 mb-4 leading-relaxed">
+      {description}
+    </p>
+
+    <!-- Price Preview -->
+    {price && (
+      <div class="flex items-baseline gap-1 text-primary-600">
+        <span class="text-xs">Mulai dari</span>
+        <span class="text-lg font-bold">{price}</span>
+      </div>
+    )}
+
+    <!-- Arrow -->
+    <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+      <svg class="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+      </svg>
+    </div>
+  </div>
+</a>

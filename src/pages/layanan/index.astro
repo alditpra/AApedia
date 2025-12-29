@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+
+const services = [
+  {
+    title: "AAPEDIA PUBLISH",
+    description: "Hosting stabil untuk Web Akademik, OJS, dan Jurnal Ilmiah. Termasuk setup, SSL, dan backup.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>`,
+    badge: "Best Seller",
+    badgeColor: "orange",
+    price: "Rp 250rb/bln",
+    href: "/layanan/publish",
+  },
+  {
+    title: "AAPEDIA COMPUTE",
+    description: "Komputasi awan untuk pengolahan data statistik, scraping, dan big data analysis.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" /></svg>`,
+    price: "Rp 850rb/bln",
+    href: "/layanan/compute",
+  },
+  {
+    title: "AAPEDIA INTELLIGENCE",
+    description: "Infrastruktur GPU premium untuk Deep Learning, AI Training, dan NLP Research.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>`,
+    badge: "GPU Ready",
+    badgeColor: "purple",
+    price: "Rp 1.5jt/bln",
+    href: "/layanan/intelligence",
+  },
+  {
+    title: "AAPEDIA FLEXBILL",
+    description: "Jasa talangan pembayaran cloud untuk yang ingin kontrol penuh console AWS/GCP.",
+    icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>`,
+    price: "Fee 15-20%",
+    href: "/layanan/flexbill",
+  },
+];
+
+const oneTimeServices = [
+  {
+    title: "Cloud Migration Service",
+    description: "Pindahkan OJS/Web dari server lama ke Cloud AApedia dengan aman.",
+    price: "Rp 1.500.000",
+  },
+  {
+    title: "Architecture Consulting",
+    description: "Desain topologi server untuk proposal hibah agar terlihat profesional.",
+    price: "Rp 1.000.000",
+  },
+  {
+    title: "Security Audit",
+    description: "Bersihkan malware/virus di web jurnal yang kena hack.",
+    price: "Rp 2.000.000",
+  },
+];
+---
+
+<BaseLayout title="Layanan">
+  <Header />
+  
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="py-16 bg-gradient-to-b from-primary-50 to-white">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-3">
+          Katalog Layanan
+        </p>
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+          Your Gateway to <span class="text-gradient">World-Class Cloud</span>
+        </h1>
+        <p class="text-lg text-slate-500 max-w-2xl mx-auto">
+          Pilih paket yang sesuai kebutuhan. Semua termasuk layanan managed dan support Indonesia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Services -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-2xl font-bold text-slate-800 mb-8">Paket Managed Server</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service) => (
+            <ServiceCard {...service} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- One-Time Services -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-2xl font-bold text-slate-800 mb-8">Layanan Sekali Bayar</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {oneTimeServices.map((service) => (
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 hover-lift">
+              <h3 class="text-lg font-bold text-slate-800 mb-2">{service.title}</h3>
+              <p class="text-sm text-slate-500 mb-4">{service.description}</p>
+              <p class="text-xl font-bold text-primary-600">{service.price}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-primary-600">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">Butuh Paket Custom?</h2>
+        <p class="text-primary-100 mb-8">Konsultasikan kebutuhan spesifik Anda dengan tim kami.</p>
+        <a href="/kontak" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 rounded-full font-semibold hover:bg-primary-50 transition-all">
+          Hubungi Kami
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

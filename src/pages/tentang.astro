@@ -1,0 +1,145 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const whyUs = [
+  {
+    title: "Cloud Agnostic",
+    description:
+      "Tidak terikat satu vendor. Kami memilihkan provider terbaik (AWS, GCP, Azure, DigitalOcean) sesuai kebutuhan dan budget Anda.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>`,
+  },
+  {
+    title: "Managed Service Total",
+    description:
+      "Terima beres! Setup, konfigurasi, monitoring, backup, hingga security hardening — semua kami tangani.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>`,
+  },
+  {
+    title: "Harga Transparan Rupiah",
+    description:
+      "Bayar dalam Rupiah dengan harga tetap. Invoice dan kuitansi lengkap untuk keperluan SPJ dan audit.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" /></svg>`,
+  },
+  {
+    title: "Support Bahasa Indonesia",
+    description:
+      "Tim support lokal yang responsif. Komunikasi mudah tanpa kendala bahasa.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>`,
+  },
+];
+---
+
+<BaseLayout title="Tentang Kami">
+  <Header />
+
+  <main class="pt-24">
+    <!-- Hero -->
+    <section class="py-16 bg-gradient-to-b from-primary-50 to-white">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+          Tentang <span class="text-gradient">AApedia</span>
+        </h1>
+        <p class="text-xl text-slate-600 leading-relaxed">
+          <strong>PT Awan Akses Pedia</strong> adalah penyedia layanan managed cloud
+          server yang fokus melayani kebutuhan infrastruktur digital untuk berbagai
+          sektor di Indonesia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <div
+          class="bg-gradient-to-br from-primary-600 to-accent-600 rounded-3xl p-8 md:p-12 text-white text-center"
+        >
+          <p
+            class="text-sm font-semibold uppercase tracking-wider mb-4 text-primary-200"
+          >
+            Misi Kami
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Cloud Profesional, Harga Indonesia
+          </h2>
+          <p class="text-lg text-primary-100 max-w-2xl mx-auto">
+            Membantu edukasi, riset, startup, dan UMKM Indonesia mengakses
+            infrastruktur cloud kelas dunia dengan harga terjangkau, proses
+            mudah, dan support lokal yang responsif.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-slate-800 text-center mb-12">
+          Kenapa Memilih AApedia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          {
+            whyUs.map((item) => (
+              <div class="bg-white rounded-2xl p-6 border border-slate-100 hover-lift">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center mb-4 text-primary-600">
+                  <Fragment set:html={item.icon} />
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                  {item.title}
+                </h3>
+                <p class="text-slate-500 leading-relaxed">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Cloud Agnostic Philosophy -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-slate-800 mb-4">
+            Filosofi Cloud Agnostic
+          </h2>
+          <p class="text-lg text-slate-500">
+            Kami menjual <strong>Solusi</strong>, bukan vendor.
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+          <p class="text-slate-600 leading-relaxed mb-6">
+            Konsep jasa kami adalah <strong>"Cloud Agnostic"</strong>. Artinya,
+            kami menjual solusi — masalah nanti di belakang layar Anda
+            membelikannya di AWS, Google Cloud, Azure, atau DigitalOcean, itu
+            adalah dapur kami (disesuaikan dengan budget dan kebutuhan teknis).
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            Dengan pendekatan ini, Anda tidak perlu khawatir terikat dengan satu
+            vendor. Kami akan memilihkan provider yang paling optimal untuk
+            kebutuhan spesifik Anda — baik dari segi performa, harga, maupun
+            lokasi data center.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-primary-600">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">Siap Berkolaborasi?</h2>
+        <p class="text-primary-100 mb-8">
+          Mari diskusi kebutuhan infrastruktur cloud Anda.
+        </p>
+        <a
+          href="/kontak"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-700 rounded-full font-semibold hover:bg-primary-50 transition-all"
+        >
+          Hubungi Kami
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
