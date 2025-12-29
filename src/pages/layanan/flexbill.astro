@@ -107,20 +107,29 @@ const faqs = [
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
           {
-            steps.map((step, index) => (
-              <div class="relative text-center">
-                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-xl">
-                  {step.number}
+            steps.map((step, index) => {
+              const colors = [
+                "from-green-400 to-green-500",
+                "from-emerald-400 to-emerald-500",
+                "from-teal-400 to-teal-500",
+              ];
+              return (
+                <div class="relative text-center">
+                  <div
+                    class={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br ${colors[index]} flex items-center justify-center text-white font-bold text-xl shadow-lg`}
+                  >
+                    {step.number}
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-800 mb-2">
+                    {step.title}
+                  </h3>
+                  <p class="text-slate-500 text-sm">{step.description}</p>
+                  {index < steps.length - 1 && (
+                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-slate-300" />
+                  )}
                 </div>
-                <h3 class="text-lg font-bold text-slate-800 mb-2">
-                  {step.title}
-                </h3>
-                <p class="text-slate-500 text-sm">{step.description}</p>
-                {index < steps.length - 1 && (
-                  <div class="hidden md:block absolute top-8 left-[60%] w-[80%] border-t-2 border-dashed border-slate-200" />
-                )}
-              </div>
-            ))
+              );
+            })
           }
         </div>
       </div>

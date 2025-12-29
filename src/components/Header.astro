@@ -51,7 +51,7 @@ const currentPath = Astro.url.pathname;
               </button>
               
               <!-- Dropdown Menu -->
-              <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out transform group-hover:translate-y-0 translate-y-2">
+              <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-out transform group-hover:translate-y-0 translate-y-2">
                 <div class="w-64 bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-2">
                   {link.children.map((child) => (
                     <a 
@@ -171,17 +171,56 @@ const currentPath = Astro.url.pathname;
     mobileMenu?.classList.toggle('hidden');
   });
 
-  // Desktop dropdown hover with ARIA management
+  // Desktop dropdown - support both hover AND click for tablets
   document.querySelectorAll('.dropdown-toggle').forEach(btn => {
     const parent = btn.closest('.group');
     if (!parent) return;
     
+    const dropdown = parent.querySelector('.dropdown-menu');
+    if (!dropdown) return;
+    
+    let isOpen = false;
+    
+    // Click/tap toggle for tablets
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      isOpen = !isOpen;
+      btn.setAttribute('aria-expanded', String(isOpen));
+      
+      if (isOpen) {
+        dropdown.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+        dropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
+      } else {
+        dropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        dropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      }
+    });
+    
+    // Hover for desktop (CSS handles this, just update ARIA)
     parent.addEventListener('mouseenter', () => {
       btn.setAttribute('aria-expanded', 'true');
     });
     
     parent.addEventListener('mouseleave', () => {
       btn.setAttribute('aria-expanded', 'false');
+      // Reset click state on mouse leave
+      isOpen = false;
+      dropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+      dropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+    });
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+      const parent = btn.closest('.group');
+      const dropdown = parent?.querySelector('.dropdown-menu');
+      if (parent && dropdown && !parent.contains(e.target)) {
+        btn.setAttribute('aria-expanded', 'false');
+        dropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+        dropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+      }
     });
   });
 </script>
+```

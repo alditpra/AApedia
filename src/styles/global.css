@@ -26,12 +26,14 @@
 /* === GLOBAL STYLES === */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-sans);
   background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* === GLASSMORPHISM UTILITY === */
@@ -40,29 +42,6 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.glass-dark {
-  background: rgba(30, 64, 175, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-}
-
-/* === GRADIENT BORDERS === */
-.gradient-border {
-  position: relative;
-  background: white;
-  border-radius: 1rem;
-}
-
-.gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 1.125rem;
-  background: linear-gradient(135deg, #3b82f6, #14b8a6);
-  z-index: -1;
 }
 
 /* === HOVER LIFT EFFECT === */
@@ -114,21 +93,6 @@ body {
   animation-delay: 2s;
 }
 
-/* === MARQUEE ANIMATION === */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
-
 /* === STICKY NAVBAR BLUR === */
 .navbar-blur {
   background: rgba(255, 255, 255, 0.8);
@@ -173,58 +137,6 @@ body {
 .btn-secondary:hover {
   background: #eff6ff;
   transform: translateY(-2px);
-}
-
-/* === SECTION BACKGROUND VARIATIONS === */
-.section-gradient-subtle {
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-}
-
-.section-gradient-primary {
-  background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
-}
-
-.section-gradient-accent {
-  background: linear-gradient(135deg, #f0fdfa 0%, #f8fafc 100%);
-}
-
-.section-pattern {
-  background-image:
-    radial-gradient(circle at 25px 25px, rgba(59, 130, 246, 0.03) 2%, transparent 0%),
-    radial-gradient(circle at 75px 75px, rgba(20, 184, 166, 0.03) 2%, transparent 0%);
-  background-size: 100px 100px;
-}
-
-/* === CARD VARIATIONS === */
-.card-accent-left {
-  border-left: 4px solid #14b8a6;
-}
-
-.card-accent-top {
-  border-top: 4px solid #2563eb;
-}
-
-.card-gradient-border {
-  position: relative;
-  background: white;
-}
-
-.card-gradient-border::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, #3b82f6, #14b8a6);
-  z-index: -1;
-  opacity: 0.5;
-}
-
-.card-shadow-colored {
-  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.15);
-}
-
-.card-shadow-colored:hover {
-  box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.25);
 }
 
 /* === ENHANCED FOCUS STATES === */

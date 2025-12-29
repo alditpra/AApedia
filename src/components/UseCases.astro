@@ -5,72 +5,118 @@ const useCases = [
         icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>`,
         title: "Jurnal & OJS",
         description: "Hosting jurnal ilmiah dengan OJS 3",
+        color: "green",
     },
     {
         icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg>`,
         title: "Profil Dosen",
         description: "Website portfolio & publikasi",
+        color: "blue",
     },
     {
         icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg>`,
         title: "Web Scraping",
         description: "Crawling data untuk riset",
+        color: "purple",
     },
     {
         icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>`,
         title: "Analisis Data",
         description: "R, Python untuk statistik",
+        color: "amber",
     },
     {
         icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" /></svg>`,
         title: "AI & Machine Learning",
         description: "Training model dengan GPU",
+        color: "pink",
     },
     {
         icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" /></svg>`,
         title: "Landing Page Bisnis",
         description: "Website UMKM & startup",
+        color: "cyan",
     },
 ];
+
+const colorClasses: Record<
+    string,
+    { bg: string; icon: string; hover: string }
+> = {
+    green: {
+        bg: "from-green-400 to-green-500",
+        icon: "text-white",
+        hover: "from-green-50",
+    },
+    blue: {
+        bg: "from-blue-400 to-blue-500",
+        icon: "text-white",
+        hover: "from-blue-50",
+    },
+    purple: {
+        bg: "from-purple-400 to-purple-500",
+        icon: "text-white",
+        hover: "from-purple-50",
+    },
+    amber: {
+        bg: "from-amber-400 to-amber-500",
+        icon: "text-white",
+        hover: "from-amber-50",
+    },
+    pink: {
+        bg: "from-pink-400 to-pink-500",
+        icon: "text-white",
+        hover: "from-pink-50",
+    },
+    cyan: {
+        bg: "from-cyan-400 to-cyan-500",
+        icon: "text-white",
+        hover: "from-cyan-50",
+    },
+};
 ---
 
-<section class="py-20 bg-slate-50 section-gradient-accent">
-    <div class="max-w-7xl mx-auto px-6">
+<section class="py-20 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-6">
         <!-- Section Header -->
         <div class="text-center mb-12">
             <p
                 class="text-sm font-semibold text-accent-700 uppercase tracking-wider mb-3"
             >
-                Bisa Untuk Apa?
+                Solusi Cloud Hosting
             </p>
             <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-                Berbagai <span class="text-gradient">Kebutuhan Digital</span> Anda
+                Untuk <span class="text-gradient">Berbagai Kebutuhan</span>
             </h2>
             <p class="text-lg text-slate-500 max-w-2xl mx-auto">
-                Dari jurnal akademik hingga training AI — semua bisa kami bantu.
+                Hosting jurnal OJS, VPS riset, hingga GPU untuk AI — semua
+                tersedia.
             </p>
         </div>
 
-        <!-- Use Cases Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <!-- Use Cases Grid - Clean individual cards -->
+        <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4"
+        >
             {
-                useCases.map((useCase, index) => (
-                    <div
-                        class={`bg-white rounded-2xl p-5 text-center border border-slate-100 hover-lift cursor-default card-shadow-colored ${
-                            index % 3 === 0 ? "card-accent-top" : ""
-                        }`}
-                    >
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center mx-auto mb-3 text-primary-600">
-                            <Fragment set:html={useCase.icon} />
+                useCases.map((useCase) => {
+                    const colors = colorClasses[useCase.color];
+                    return (
+                        <div class="bg-white rounded-2xl p-5 text-center border border-slate-100 hover:border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
+                            <div
+                                class={`w-12 h-12 rounded-xl bg-gradient-to-br ${colors.bg} flex items-center justify-center mx-auto mb-3 ${colors.icon} shadow-lg`}
+                            >
+                                <Fragment set:html={useCase.icon} />
+                            </div>
+                            <h3 class="font-semibold text-slate-800 text-sm mb-1">
+                                {useCase.title}
+                            </h3>
+                            <p class="text-xs text-slate-500">
+                                {useCase.description}
+                            </p>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-sm mb-1">
-                            {useCase.title}
-                        </h3>
-                        <p class="text-xs text-slate-600">
-                            {useCase.description}
-                        </p>
-                    </div>
-                ))
+                    );
+                })
             }
         </div>
 

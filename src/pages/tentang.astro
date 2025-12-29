@@ -43,8 +43,7 @@ const whyUs = [
         </h1>
         <p class="text-xl text-slate-600 leading-relaxed">
           <strong>PT Awan Akses Pedia</strong> adalah penyedia layanan managed cloud
-          server yang fokus melayani kebutuhan infrastruktur digital untuk berbagai
-          sektor di Indonesia.
+          server untuk kampus, startup, dan UMKM digital di Indonesia.
         </p>
       </div>
     </section>
@@ -78,19 +77,31 @@ const whyUs = [
         <h2 class="text-3xl font-bold text-slate-800 text-center mb-12">
           Kenapa Memilih AApedia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-6">
           {
-            whyUs.map((item) => (
-              <div class="bg-white rounded-2xl p-6 border border-slate-100 hover-lift">
-                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center mb-4 text-primary-600">
-                  <Fragment set:html={item.icon} />
+            whyUs.map((item, index) => {
+              const colors = [
+                "from-blue-400 to-blue-500",
+                "from-green-400 to-green-500",
+                "from-amber-400 to-amber-500",
+                "from-purple-400 to-purple-500",
+              ];
+              return (
+                <div class="bg-white rounded-2xl p-6 border border-slate-100 hover:border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div
+                    class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${colors[index % 4]} flex items-center justify-center mb-4 text-white shadow-lg`}
+                  >
+                    <Fragment set:html={item.icon} />
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-800 mb-2">
+                    {item.title}
+                  </h3>
+                  <p class="text-slate-500 leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-                <h3 class="text-xl font-bold text-slate-800 mb-2">
-                  {item.title}
-                </h3>
-                <p class="text-slate-500 leading-relaxed">{item.description}</p>
-              </div>
-            ))
+              );
+            })
           }
         </div>
       </div>
@@ -107,7 +118,9 @@ const whyUs = [
             Kami menjual <strong>Solusi</strong>, bukan vendor.
           </p>
         </div>
-        <div class="bg-white rounded-2xl p-8 border border-slate-200">
+        <div
+          class="bg-white rounded-2xl p-8 border border-slate-100 shadow-lg shadow-slate-900/5"
+        >
           <p class="text-slate-600 leading-relaxed mb-6">
             Konsep jasa kami adalah <strong>"Cloud Agnostic"</strong>. Artinya,
             kami menjual solusi — masalah nanti di belakang layar Anda

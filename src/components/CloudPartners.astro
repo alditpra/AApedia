@@ -20,64 +20,38 @@ const partners = [
 ];
 ---
 
-<section
-  class="py-20 bg-gradient-to-b from-white to-slate-50 border-y border-slate-100 section-pattern"
->
-  <div class="max-w-7xl mx-auto px-6">
+<section class="py-16 bg-white border-y border-slate-100">
+  <div class="max-w-5xl mx-auto px-6">
     <!-- Section Header -->
     <div class="text-center mb-10">
       <p
         class="text-sm font-semibold text-primary-600 uppercase tracking-wider mb-2"
       >
-        Infrastruktur Terbaik Dunia
+        Infrastruktur Enterprise Grade
       </p>
       <h2 class="text-2xl md:text-3xl font-bold text-slate-800">
         Powered by Cloud Leaders
       </h2>
-      <p class="mt-4 text-slate-600 max-w-2xl mx-auto">
-        Provider global, infrastruktur enterprise.<br />
-        <strong class="text-slate-800">Bukan server kaleng-kaleng.</strong>
-      </p>
     </div>
 
-    <!-- Logo Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <!-- Logo Row - Minimal Style -->
+    <div class="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
       {
         partners.map((partner) => (
-          <div class="flex items-center justify-center px-6 py-6 rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg hover:scale-105 transition-all cursor-default">
+          <div class="flex items-center justify-center group cursor-default">
             <img
               src={partner.logo}
               alt={partner.name}
-              class="h-8 w-auto object-contain"
+              class="h-8 lg:h-10 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-300"
             />
           </div>
         ))
       }
     </div>
 
-    <!-- Cloud Agnostic Highlight -->
-    <div class="mt-12 text-center">
-      <div
-        class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-primary-50 to-accent-50 border border-primary-100"
-      >
-        <svg
-          class="w-5 h-5 text-primary-600"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
-          ></path>
-        </svg>
-        <span class="text-sm font-medium text-slate-700">
-          <strong class="text-primary-700">Cloud Agnostic</strong> — Solusi fleksibel,
-          tanpa vendor lock-in
-        </span>
-      </div>
-    </div>
+    <!-- Tagline -->
+    <p class="text-center text-sm text-slate-500 mt-8">
+      <strong class="text-slate-600">Provider Ternama</strong> — Bukan server kaleng-kaleng.
+    </p>
   </div>
 </section>

@@ -1,21 +1,23 @@
 ---
-// Hero Section with gradient background and floating elements
+// Hero Section - Centered Layout with Full-Width Visual
 ---
 
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<section
+  class="relative min-h-screen flex flex-col pt-20 overflow-hidden overflow-x-hidden"
+>
   <!-- Background Decorations -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <!-- Gradient Orbs -->
     <div
-      class="absolute top-20 right-10 w-72 h-72 bg-primary-400/20 rounded-full blur-3xl animate-float"
+      class="absolute top-20 right-0 w-48 sm:w-72 h-48 sm:h-72 bg-primary-400/20 rounded-full blur-3xl animate-float"
     >
     </div>
     <div
-      class="absolute bottom-20 left-10 w-96 h-96 bg-accent-400/20 rounded-full blur-3xl animate-float-delayed"
+      class="absolute bottom-20 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-accent-400/20 rounded-full blur-3xl animate-float-delayed"
     >
     </div>
     <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary-100/50 to-accent-100/30 rounded-full blur-3xl"
+      class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] md:w-[800px] h-[400px] sm:h-[600px] md:h-[800px] bg-gradient-to-br from-primary-100/40 to-accent-100/20 rounded-full blur-3xl"
     >
     </div>
 
@@ -26,134 +28,172 @@
     </div>
   </div>
 
-  <div class="relative max-w-7xl mx-auto px-6 py-20">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <!-- Text Content -->
-      <div class="animate-fade-in-up">
-        <!-- Badge -->
-        <div
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-sm font-medium mb-6"
-        >
-          <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></span>
-          PT. Awan Akses Pedia
-        </div>
+  <div class="relative max-w-7xl mx-auto px-6 py-16 flex-1 flex flex-col">
+    <!-- Centered Text Content -->
+    <div class="text-center max-w-4xl mx-auto animate-fade-in-up">
+      <!-- Badge -->
+      <div
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 text-primary-700 text-sm font-medium mb-6"
+      >
+        <span class="w-2 h-2 bg-accent-500 rounded-full animate-pulse"></span>
+        PT. Awan Akses Pedia
+      </div>
 
-        <!-- Headline -->
-        <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6"
-        >
-          <span class="text-gradient">Cloud Profesional</span>
-          <br />
-          <span class="text-slate-800">Harga Indonesia</span>
-        </h1>
+      <!-- Headline -->
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-tight mb-6"
+      >
+        <span class="text-gradient">Managed Cloud Server</span>
+        <br />
+        <span class="text-slate-800">untuk Indonesia</span>
+      </h1>
 
-        <!-- Subheadline -->
-        <p
-          class="text-lg md:text-xl text-slate-600 mb-8 max-w-lg leading-relaxed"
-        >
-          Managed Cloud Server untuk <strong class="text-slate-800"
-            >Edukasi, Riset, Startup, dan UMKM Digital</strong
-          >. Terima beres, infrastruktur kelas dunia, harga transparan dalam
-          Rupiah.
-        </p>
+      <!-- Subheadline -->
+      <p
+        class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+      >
+        Layanan <strong class="text-slate-800">cloud hosting</strong> untuk jurnal
+        OJS, website kampus, startup, hingga UMKM digital. Fully managed, harga Rupiah,
+        invoice lengkap.
+      </p>
 
-        <!-- CTA Buttons -->
-        <div class="flex flex-wrap gap-4">
-          <a href="/layanan" class="btn-primary inline-flex items-center gap-2">
-            Lihat Paket
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
-            </svg>
-          </a>
-          <a
-            href="/kontak"
-            class="btn-secondary inline-flex items-center gap-2"
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <a
+          href="/layanan"
+          class="btn-primary inline-flex items-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+        >
+          Lihat Paket
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
           >
-            <svg
-              class="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
-              ></path>
-            </svg>
-            Konsultasi Gratis
-          </a>
-        </div>
-
-        <!-- Trust Indicators -->
-        <div
-          class="mt-12 flex flex-wrap items-center gap-6 text-sm text-slate-500"
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path>
+          </svg>
+        </a>
+        <a
+          href="/kontak"
+          class="btn-secondary inline-flex items-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
         >
-          <div class="flex items-center gap-2">
-            <svg
-              class="w-5 h-5 text-accent-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                clip-rule="evenodd"></path>
-            </svg>
-            Managed Services
-          </div>
-          <div class="flex items-center gap-2">
-            <svg
-              class="w-5 h-5 text-accent-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                clip-rule="evenodd"></path>
-            </svg>
-            Dukungan Teknis Lokal
-          </div>
-          <div class="flex items-center gap-2">
-            <svg
-              class="w-5 h-5 text-accent-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                clip-rule="evenodd"></path>
-            </svg>
-            Invoice & SPJ Lengkap
-          </div>
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"
+            ></path>
+          </svg>
+          Konsultasi Gratis
+        </a>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div
+        class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-xs sm:text-sm text-slate-500"
+      >
+        <div class="flex items-center gap-2">
+          <svg
+            class="w-5 h-5 text-accent-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Managed Services
+        </div>
+        <div class="flex items-center gap-2">
+          <svg
+            class="w-5 h-5 text-accent-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Dukungan Teknis Lokal
+        </div>
+        <div class="flex items-center gap-2">
+          <svg
+            class="w-5 h-5 text-accent-500"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"></path>
+          </svg>
+          Invoice & SPJ Lengkap
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-Width Visual Showcase -->
+    <div
+      class="relative mt-12 lg:mt-16 flex-1 flex items-center justify-center"
+    >
+      <!-- Glow effect behind -->
+      <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none"
+      >
+        <div
+          class="w-full max-w-4xl h-64 bg-gradient-to-r from-primary-400/20 via-accent-400/30 to-primary-400/20 rounded-full blur-3xl"
+        >
         </div>
       </div>
 
-      <!-- 3D Illustration -->
-      <div class="relative hidden lg:flex items-center justify-center">
-        <div class="relative p-8">
+      <!-- Main Visual Container -->
+      <div class="relative group">
+        <!-- Animated border glow -->
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-primary-400 via-accent-400 to-primary-500 rounded-3xl opacity-30 group-hover:opacity-60 transition duration-500 blur-lg"
+        >
+        </div>
+
+        <div
+          class="relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-12 shadow-2xl shadow-primary-900/10 border border-white/50"
+        >
           <!-- Main Image -->
           <img
             src="/hero.webp"
             alt="Cloud Infrastructure Illustration"
-            class="w-[500px] h-[300px] object-contain drop-shadow-2xl animate-float"
+            class="w-full max-w-5xl h-auto object-contain mx-auto"
           />
 
-          <!-- Floating Badge - Top Right -->
+          <!-- Floating Badges - Hidden on mobile -->
+          <!-- Top Left Badge -->
           <div
-            class="absolute top-4 -right-4 glass rounded-2xl px-4 py-3 shadow-lg animate-float"
+            class="hidden sm:block absolute top-4 left-4 lg:top-6 lg:left-6 glass rounded-2xl px-4 py-3 shadow-lg animate-float"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse">
+              </div>
+              <div>
+                <p class="text-sm font-bold text-slate-800">99.9% Uptime</p>
+                <p class="text-xs text-slate-500">SLA Guaranteed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Right Badge -->
+          <div
+            class="hidden sm:block absolute top-4 right-4 lg:top-6 lg:right-6 glass rounded-2xl px-4 py-3 shadow-lg animate-float-delayed"
           >
             <div class="flex items-center gap-2">
               <div
@@ -176,17 +216,29 @@
             </div>
           </div>
 
-          <!-- Stats Badge - Bottom Left -->
+          <!-- Bottom Center Badge -->
           <div
-            class="absolute bottom-4 -left-4 glass rounded-2xl px-4 py-3 shadow-lg animate-float-delayed"
+            class="hidden sm:block absolute -bottom-4 left-1/2 -translate-x-1/2 glass rounded-2xl px-6 py-3 shadow-xl animate-float border border-white/60"
           >
-            <div class="flex items-center gap-3">
-              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-sm border-2 border-white"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"
+                  ></path>
+                </svg>
               </div>
-              <div>
-                <p class="text-sm font-bold text-slate-800">Teknologi Cloud</p>
-                <p class="text-xs text-slate-500">Digitalisasi Modern</p>
-              </div>
+              <p class="text-sm font-bold text-slate-800">AApedia.com</p>
             </div>
           </div>
         </div>

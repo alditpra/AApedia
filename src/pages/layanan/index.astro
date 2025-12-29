@@ -80,8 +80,8 @@ const oneTimeServices = [
           Akses Cloud <span class="text-gradient">Kelas Dunia</span>
         </h1>
         <p class="text-lg text-slate-500 max-w-2xl mx-auto">
-          Pilih paket yang sesuai kebutuhan. Semua termasuk layanan managed dan
-          dukungan teknis lokal.
+          Untuk kampus, startup, dan UMKM digital. Semua termasuk layanan
+          managed dan dukungan teknis lokal.
         </p>
       </div>
     </section>
@@ -106,17 +106,36 @@ const oneTimeServices = [
         </h2>
         <div class="grid md:grid-cols-3 gap-6">
           {
-            oneTimeServices.map((service) => (
-              <div class="bg-white rounded-2xl p-6 border border-slate-100 hover-lift">
-                <h3 class="text-lg font-bold text-slate-800 mb-2">
-                  {service.title}
-                </h3>
-                <p class="text-sm text-slate-500 mb-4">{service.description}</p>
-                <p class="text-xl font-bold text-primary-600">
-                  {service.price}
-                </p>
-              </div>
-            ))
+            oneTimeServices.map((service, index) => {
+              const colors = [
+                "from-purple-400 to-purple-500",
+                "from-blue-400 to-blue-500",
+                "from-red-400 to-red-500",
+              ];
+              const icons = [
+                `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>`,
+                `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>`,
+                `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>`,
+              ];
+              return (
+                <div class="bg-white rounded-2xl p-6 border border-slate-100 hover:border-slate-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                  <div
+                    class={`w-12 h-12 rounded-xl bg-gradient-to-br ${colors[index]} flex items-center justify-center mb-4 text-white shadow-lg`}
+                  >
+                    <Fragment set:html={icons[index]} />
+                  </div>
+                  <h3 class="text-lg font-bold text-slate-800 mb-2">
+                    {service.title}
+                  </h3>
+                  <p class="text-sm text-slate-500 mb-4">
+                    {service.description}
+                  </p>
+                  <p class="text-xl font-bold text-primary-600">
+                    {service.price}
+                  </p>
+                </div>
+              );
+            })
           }
         </div>
       </div>
