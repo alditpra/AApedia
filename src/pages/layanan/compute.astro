@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 const packages = [
   {
@@ -140,8 +141,15 @@ const useCases = [
 
   <main class="pt-24">
     <!-- Hero -->
-    <section class="py-16 bg-gradient-to-b from-blue-50 to-white">
+    <section class="py-20 bg-gradient-to-b from-blue-50 to-white">
       <div class="max-w-7xl mx-auto px-6">
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Layanan", href: "/layanan" },
+            { label: "AAPEDIA COMPUTE" },
+          ]}
+        />
         <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
           AAPEDIA <span class="text-gradient">COMPUTE</span>
         </h1>

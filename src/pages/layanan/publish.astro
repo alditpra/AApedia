@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 const packages = [
   {
@@ -19,7 +20,7 @@ const packages = [
     popular: false,
   },
   {
-    name: "Education Pro",
+    name: "Profesional",
     target: "Jurnal Ilmiah (OJS 3), Web Kampus, E-Learning",
     specs: "2 vCPU, 4 GB RAM, 80 GB SSD",
     features: [
@@ -131,8 +132,15 @@ const useCases = [
 
   <main class="pt-24">
     <!-- Hero -->
-    <section class="py-16 bg-gradient-to-b from-orange-50 to-white">
+    <section class="py-20 bg-gradient-to-b from-orange-50 to-white">
       <div class="max-w-7xl mx-auto px-6">
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Layanan", href: "/layanan" },
+            { label: "AAPEDIA PUBLISH" },
+          ]}
+        />
         <div class="flex items-center gap-2 mb-4">
           <span
             class="px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700"
@@ -273,7 +281,9 @@ const useCases = [
 
         <!-- Pricing Note -->
         <p class="text-center text-sm text-slate-500 mt-8">
-          Minimal langganan 1 bulan.
+          Minimal langganan 1 bulan, tidak ada kontrak jangka panjang.<br />
+          💡 <strong class="text-slate-700">Bonus:</strong> Berlangganan 12 bulan
+          = Gratis desain & pembuatan website baru!
         </p>
       </div>
     </section>
@@ -297,7 +307,7 @@ const useCases = [
                 >
                 <th
                   class="text-center p-4 font-semibold text-primary-600 bg-primary-50"
-                  >Education Pro</th
+                  >Profesional</th
                 >
                 <th class="text-center p-4 font-semibold text-slate-700"
                   >Pro Max</th
@@ -428,16 +438,18 @@ const useCases = [
         </p>
         <div class="grid md:grid-cols-2 gap-6">
           <!-- Termasuk -->
-          <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div
+            class="bg-gradient-to-br from-accent-50 to-green-50 rounded-2xl p-6 border border-accent-200 shadow-lg"
+          >
             <div class="flex items-center gap-3 mb-4">
               <div
-                class="w-10 h-10 rounded-full bg-accent-100 flex items-center justify-center"
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-accent-500 to-green-500 flex items-center justify-center shadow-md"
               >
                 <svg
-                  class="w-5 h-5 text-accent-600"
+                  class="w-6 h-6 text-white"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.5"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -446,7 +458,7 @@ const useCases = [
                     d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800">Yang Termasuk</h3>
+              <h3 class="font-bold text-slate-800 text-base">Yang Termasuk</h3>
             </div>
             <ul class="space-y-3 text-sm text-slate-600">
               <li class="flex items-start gap-2">
@@ -524,16 +536,18 @@ const useCases = [
             </ul>
           </div>
           <!-- Tidak Termasuk -->
-          <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div
+            class="bg-white rounded-2xl p-6 border-2 border-slate-300 shadow-lg"
+          >
             <div class="flex items-center gap-3 mb-4">
               <div
-                class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center"
+                class="w-12 h-12 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 flex items-center justify-center shadow-md"
               >
                 <svg
-                  class="w-5 h-5 text-slate-500"
+                  class="w-6 h-6 text-slate-600"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.5"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -542,7 +556,7 @@ const useCases = [
                     d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
               </div>
-              <h3 class="font-bold text-slate-800">Tidak Termasuk</h3>
+              <h3 class="font-bold text-slate-800 text-base">Tidak Termasuk</h3>
             </div>
             <ul class="space-y-3 text-sm text-slate-500">
               <li class="flex items-start gap-2">
@@ -623,30 +637,36 @@ const useCases = [
         </p>
         <div class="grid md:grid-cols-2 gap-6">
           <div
-            class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 border border-primary-100"
+            class="bg-gradient-to-br from-blue-50 via-primary-50 to-accent-50 rounded-2xl p-8 border border-primary-200 shadow-lg hover:shadow-xl transition-shadow"
           >
-            <h3 class="font-bold text-slate-800 mb-2">
-              📐 Desain & Pembuatan Website
+            <div class="text-5xl mb-4">📐</div>
+            <h3 class="font-bold text-slate-800 mb-3 text-lg">
+              Desain & Pembuatan Website
             </h3>
-            <p class="text-sm text-slate-600 mb-4">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
               Kami buatkan website dari nol, tinggal pakai. Sudah termasuk
               hosting.
             </p>
-            <p class="text-xs text-primary-600 font-medium">
-              * Minimal langganan cloud 1 tahun untuk paket bundling.
+            <p
+              class="text-xs text-primary-700 font-semibold bg-primary-100 px-3 py-2 rounded-lg"
+            >
+              ✨ Minimal langganan cloud 1 tahun untuk paket bundling.
             </p>
           </div>
           <div
-            class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-6 border border-primary-100"
+            class="bg-gradient-to-br from-purple-50 via-accent-50 to-pink-50 rounded-2xl p-8 border border-accent-200 shadow-lg hover:shadow-xl transition-shadow"
           >
-            <h3 class="font-bold text-slate-800 mb-2">
-              👤 Outsource Admin Website
+            <div class="text-5xl mb-4">👤</div>
+            <h3 class="font-bold text-slate-800 mb-3 text-lg">
+              Outsource Admin Website
             </h3>
-            <p class="text-sm text-slate-600 mb-4">
+            <p class="text-sm text-slate-600 mb-4 leading-relaxed">
               Butuh orang untuk kelola konten website? Kami bisa carikan.
             </p>
-            <p class="text-xs text-primary-600 font-medium">
-              * Hubungi kami untuk penawaran custom.
+            <p
+              class="text-xs text-accent-700 font-semibold bg-accent-100 px-3 py-2 rounded-lg"
+            >
+              💬 Hubungi kami untuk penawaran custom.
             </p>
           </div>
         </div>

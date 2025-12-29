@@ -37,8 +37,10 @@ const currentPath = Astro.url.pathname;
           link.children ? (
             <div class="relative group">
               <button 
-                aria-label="Toggle Dropdown"
-                class={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary-600 ${
+                aria-label="Toggle Layanan Dropdown"
+                aria-expanded="false"
+                aria-haspopup="true"
+                class={`dropdown-toggle flex items-center gap-1 text-sm font-medium transition-colors hover:text-primary-600 ${
                   currentPath.startsWith(link.href) ? 'text-primary-600' : 'text-slate-600'
                 }`}
               >
@@ -60,6 +62,14 @@ const currentPath = Astro.url.pathname;
                       <p class="text-xs text-slate-500">{child.desc}</p>
                     </a>
                   ))}
+                  <div class="border-t border-slate-100 mt-2 pt-2">
+                    <a 
+                      href="/layanan"
+                      class="block px-4 py-2 rounded-lg hover:bg-primary-50 transition-colors text-center"
+                    >
+                      <p class="text-sm font-semibold text-primary-600">Lihat Semua Layanan →</p>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,7 +92,13 @@ const currentPath = Astro.url.pathname;
       </a>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" aria-label="Open Menu" class="md:hidden p-2 text-slate-600 hover:text-primary-600">
+      <button 
+        id="mobile-menu-btn" 
+        aria-label="Toggle Navigation Menu" 
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="md:hidden p-2 text-slate-600 hover:text-primary-600"
+      >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
@@ -90,35 +106,53 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-200/50 pt-4">
-      <div class="flex flex-col gap-4">
+    <div 
+      id="mobile-menu" 
+      class="hidden md:hidden mt-4 pb-4 border-t border-slate-200/50 pt-4"
+      role="navigation"
+      aria-label="Mobile Navigation"
+    >
+      <div class="flex flex-col gap-3">
         {navLinks.map((link) => (
           link.children ? (
-             <div class="space-y-2">
-                <p class="text-sm font-semibold text-slate-500 px-2 uppercase text-xs tracking-wider">{link.label}</p>
-                {link.children.map(child => (
+             <div class="bg-slate-50 rounded-xl p-3">
+                <p class="text-xs font-bold text-primary-600 px-2 mb-2 uppercase tracking-wider">{link.label}</p>
+                <div class="space-y-1">
+                  {link.children.map(child => (
                     <a 
-                    href={child.href} 
-                    class={`block px-2 text-sm font-medium transition-colors hover:text-primary-600 ${
-                      currentPath === child.href ? 'text-primary-600' : 'text-slate-600'
-                    }`}
+                      href={child.href} 
+                      class={`block px-3 py-3 rounded-lg text-sm font-medium transition-colors ${
+                        currentPath === child.href 
+                          ? 'bg-primary-600 text-white' 
+                          : 'text-slate-700 hover:bg-white hover:shadow-sm'
+                      }`}
+                    >
+                      <div class="font-semibold text-sm">{child.label}</div>
+                      <div class="text-xs opacity-75 mt-0.5">{child.desc}</div>
+                    </a>
+                  ))}
+                  <a 
+                    href="/layanan"
+                    class="block px-3 py-3 rounded-lg text-sm font-medium transition-colors border-t border-slate-200 mt-2 pt-3 text-center text-primary-600 hover:bg-white hover:shadow-sm"
                   >
-                    {child.label} <span class="text-slate-500 font-normal">- {child.desc}</span>
+                    <div class="font-semibold text-sm">Lihat Semua Layanan →</div>
                   </a>
-                ))}
+                </div>
              </div>
           ) : (
             <a 
               href={link.href} 
-              class={`block px-2 text-sm font-medium transition-colors hover:text-primary-600 ${
-                currentPath === link.href ? 'text-primary-600' : 'text-slate-600'
+              class={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                currentPath === link.href 
+                  ? 'bg-primary-600 text-white' 
+                  : 'text-slate-700 hover:bg-slate-50'
               }`}
             >
               {link.label}
             </a>
           )
         ))}
-        <a href="/kontak" class="btn-primary text-sm text-center mt-2">
+        <a href="/kontak" class="btn-primary text-sm text-center mt-2 py-3">
           Mulai Konsultasi
         </a>
       </div>
@@ -127,10 +161,27 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
+  // Mobile menu toggle with ARIA state management
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   
   menuBtn?.addEventListener('click', () => {
+    const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+    menuBtn.setAttribute('aria-expanded', String(!isExpanded));
     mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Desktop dropdown hover with ARIA management
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    const parent = btn.closest('.group');
+    if (!parent) return;
+    
+    parent.addEventListener('mouseenter', () => {
+      btn.setAttribute('aria-expanded', 'true');
+    });
+    
+    parent.addEventListener('mouseleave', () => {
+      btn.setAttribute('aria-expanded', 'false');
+    });
   });
 </script>

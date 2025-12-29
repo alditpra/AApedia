@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
 
 const packages = [
   {
@@ -139,8 +140,15 @@ const useCases = [
 
   <main class="pt-24">
     <!-- Hero -->
-    <section class="py-16 bg-gradient-to-b from-purple-50 to-white">
+    <section class="py-20 bg-gradient-to-b from-purple-50 to-white">
       <div class="max-w-7xl mx-auto px-6">
+        <Breadcrumb
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Layanan", href: "/layanan" },
+            { label: "AAPEDIA INTELLIGENCE" },
+          ]}
+        />
         <div class="flex items-center gap-2 mb-4">
           <span
             class="px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700"
@@ -162,7 +170,7 @@ const useCases = [
     </section>
 
     <!-- How It Works -->
-    <section class="py-16 bg-slate-50">
+    <section class="py-20 bg-slate-50">
       <div class="max-w-7xl mx-auto px-6">
         <h2
           class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-12"
@@ -191,7 +199,7 @@ const useCases = [
     </section>
 
     <!-- Pricing Cards -->
-    <section class="py-16">
+    <section class="py-20">
       <div class="max-w-7xl mx-auto px-6">
         <h2
           class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-4"
@@ -284,7 +292,7 @@ const useCases = [
     </section>
 
     <!-- Comparison Table -->
-    <section class="py-16 bg-slate-50">
+    <section class="py-20 bg-slate-50">
       <div class="max-w-5xl mx-auto px-6">
         <h2
           class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-12"
@@ -367,7 +375,7 @@ const useCases = [
     </section>
 
     <!-- Use Cases -->
-    <section class="py-16">
+    <section class="py-20">
       <div class="max-w-7xl mx-auto px-6">
         <h2
           class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-4"
@@ -409,7 +417,7 @@ const useCases = [
     </section>
 
     <!-- FAQ -->
-    <section class="py-16">
+    <section class="py-20">
       <div class="max-w-3xl mx-auto px-6">
         <h2
           class="text-2xl md:text-3xl font-bold text-slate-800 text-center mb-12"
